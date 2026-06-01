@@ -1,4 +1,17 @@
 <?php
-$conn=mysqli_connect('localhost','root','','db_jakabaring');
-if(!$conn) die(mysqli_connect_error());
-?>
+
+$host = "localhost";
+$user = "root";
+$pass = "";
+$db   = "db_jakabaring";
+
+$conn = mysqli_connect(
+    $host,
+    $user,
+    $pass,
+    $db
+);
+
+if (!$conn) {
+    die("Koneksi Database Gagal : " . mysqli_connect_error());
+}

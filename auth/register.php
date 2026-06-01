@@ -1,8 +1,8 @@
 <?php
 require_once __DIR__ . '/../config/koneksi.php';
 
-/** @var mysqli $conn */
-if (!isset($conn)) {
+/** @var mysqli $koneksi */
+if (!isset($koneksi)) {
     die('Database connection not established.');
 }
 
@@ -11,24 +11,24 @@ $pesan = "";
 if (isset($_POST['daftar'])) {
 
     $nama = mysqli_real_escape_string(
-        $conn,
+        $koneksi,
         $_POST['nama']
     );
 
     $email = mysqli_real_escape_string(
-        $conn,
+        $koneksi,
         $_POST['email']
     );
 
     $no_hp = mysqli_real_escape_string(
-        $conn,
+        $koneksi,
         $_POST['no_hp']
     );
 
     $password = md5($_POST['password']);
 
     $cek = mysqli_query(
-        $conn,
+        $koneksi,
         "SELECT * FROM users
         WHERE email='$email'"
     );
@@ -39,7 +39,7 @@ if (isset($_POST['daftar'])) {
     } else {
 
         mysqli_query(
-            $conn,
+            $koneksi,
             "INSERT INTO users(
                 nama,
                 email,

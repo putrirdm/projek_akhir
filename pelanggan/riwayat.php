@@ -2,9 +2,20 @@
 
 session_start();
 
+$conn = null;
 include '../config/koneksi.php';
 
 $id_user = $_SESSION['id_user'];
+
+// Ensure a mysqli connection variable named $conn is available.
+// Some koneksi.php files use $koneksi as the connection variable.
+if ($conn === null && isset($koneksi)) {
+    $conn = $koneksi;
+}
+
+if ($conn === null) {
+    die('Database connection not established.');
+}
 
 $data = mysqli_query(
     $conn,

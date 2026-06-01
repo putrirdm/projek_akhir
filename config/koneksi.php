@@ -5,13 +5,14 @@ $user = "root";
 $pass = "";
 $db   = "db_jakabaring";
 
-$conn = mysqli_connect(
+$koneksi = mysqli_connect(
     $host,
     $user,
     $pass,
     $db
 );
 
-if (!$conn) {
-    die("Koneksi Database Gagal : " . mysqli_connect_error());
+if(!$koneksi){
+    die("MYSQL ERROR: " . mysqli_connect_error());
 }
+$conn = $koneksi;

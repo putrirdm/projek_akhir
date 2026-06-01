@@ -4,6 +4,10 @@ session_start();
 
 require_once __DIR__ . '/../config/koneksi.php';
 
+if (!isset($conn)) {
+    die('Database connection failed');
+}
+
 $data = mysqli_query(
     $conn,
     "SELECT

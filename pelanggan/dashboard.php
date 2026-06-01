@@ -1,0 +1,1 @@
+<?php session_start(); include '../templates/header.php'; echo '<h2>Dashboard Pelanggan</h2><a href=booking.php>Booking</a>'; include '../templates/footer.php'; ?>

@@ -1,0 +1,1 @@
+<?php include '../templates/header.php'; echo '<h3>Form Booking</h3>'; include '../templates/footer.php'; ?>

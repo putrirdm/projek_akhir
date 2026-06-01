@@ -1,0 +1,1 @@
+<?php session_start(); include '../templates/header.php'; echo '<h2>Dashboard Admin</h2><a href=../auth/logout.php>Logout</a>'; include '../templates/footer.php'; ?>
